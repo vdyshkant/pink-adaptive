@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map with custom marker</title>
+</head>
+<body>
+
+      <!-- Map -->
+      <section class="map" id="map-contacts" style="min-height:500px;">
+      </section>
+      <!-- End Map -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+      (function () {
+            var map = new google.maps.Map(document.getElementById('map-contacts'),  // map id
+             {
+              zoom: 15,
+              center: {lat: 50.406626, lng: 30.677891},                    // <<< coordinates
+              scrollwheel: false,
+              mapTypeControl: false,
+              panControl: false,
+              disableDefaultUI: false,
+              mapTypeControlOptions: {
+                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                 position: google.maps.ControlPosition.RIGHT_BOTTOM
+              },
+              zoomControl: true,
+              zoomControlOptions: {
+                 position: google.maps.ControlPosition.LEFT_CENTER
+              },
+              scaleControl: true,
+              streetViewControl: false
+            });
+
+            var image = 'label.jpg';                                        // marker pic here
+            var beachMarker = new google.maps.Marker({
+                  position:{ lat: 50.406626, lng: 30.677891},               // <<< coordinates
+                  map: map,
+                  icon: image
+                  });
+      })();
+    </script>
+
+</body>
+</html>
+
+// marker pic here
